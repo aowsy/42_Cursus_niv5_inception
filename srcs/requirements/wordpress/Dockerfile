@@ -11,8 +11,6 @@ RUN apt-get install php-fpm -y
 RUN apt-get install php-pdo -y
 RUN apt-get install php-gd php-cli -y
 RUN apt-get install php-mbstring -y
-RUN apt-get install redis -y
-RUN apt-get install php-redis -y
 
 RUN rm -rf /var/lib/apt/lists/*
 
