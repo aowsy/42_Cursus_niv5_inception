@@ -6,7 +6,7 @@ all:
 	@cp hosts /etc/hosts
 	@mkdir -p /home/mdelforg/data/wordpress
 	@mkdir -p /home/mdelforg/data/mariadb
-	@docker compose -f ./srcs/docker-compose.yml up -d --build
+	@docker compose -f $(PATH_YML) up -d --build
 
 stop:
 	@docker compose -f $(PATH_YML) stop
