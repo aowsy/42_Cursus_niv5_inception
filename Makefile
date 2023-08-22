@@ -2,6 +2,8 @@ PATH_HOME = /home/mdelforg
 PATH_YML = ./srcs/docker-compose.yml
 
 all:
+	@rm -rf /etc/hosts
+	@cp hosts /etc/hosts
 	@mkdir -p /home/mdelforg/data/wordpress
 	@mkdir -p /home/mdelforg/data/mariadb
 	@docker compose -f ./srcs/docker-compose.yml up -d --build
