@@ -22,6 +22,7 @@ clean:
 fclean:
         @docker compose -f $(PATH_YML) down --rmi local -v
         @rm -rf $(PATH_DATA)
+        @docker system prune -af
 
 re: fclean all
 
