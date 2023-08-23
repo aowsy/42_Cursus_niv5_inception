@@ -2,8 +2,7 @@ PATH_DATA = /home/mdelforg/data
 PATH_YML = ./srcs/docker-compose.yml
 
 all:
-        @rm -rf /etc/hosts
-        @cp hosts /etc/hosts
+        @grep "127.0.0.1  mdelforg.42.fr" /etc/hosts || echo "127.0.0.1  mdelforg.42.fr" >> /etc/hosts
         @mkdir -p $(PATH_DATA)/wordpress
         @mkdir -p $(PATH_DATA)/mariadb
         @docker compose -f $(PATH_YML) up -d --build
